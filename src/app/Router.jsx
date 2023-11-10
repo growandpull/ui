@@ -8,16 +8,16 @@ import {
   SIGN_UP_ROUTE,
 } from "./Routes";
 
-import HalfWidthLayout from "../layouts/HalfWidthLayout";
 import SignUpRoute from "../routes/SignUpRoute";
 import SignInRoute from "../routes/SignInRoute";
 import SignOutRoute from "../routes/SignOutRoute";
 import PageNotFoundRoute from "../routes/PageNotFoundRoute";
+import LogoHalfWidthLayout from "../layouts/LogoHalfWidthLayout";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path={MAIN_ROUTE} element={<HalfWidthLayout />}>
+      <Route path={MAIN_ROUTE} element={<LogoHalfWidthLayout />}>
         <Route index element={<Navigate to={SIGN_IN_ROUTE} replace />} />
         <Route path={SIGN_IN_ROUTE} element={<SignInRoute />} />
 
