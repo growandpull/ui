@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import BigLogoImage from "../assets/BigLogoImage.svg";
 
@@ -13,7 +13,9 @@ const LogoHalfWidthLayout = () => {
         />
       </Grid>
       <Grid item xs={6}>
-        <Outlet />
+        <Stack justifyContent="center" alignItems="center" height={1}>
+          <Outlet />
+        </Stack>
       </Grid>
     </Grid>
   );
