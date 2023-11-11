@@ -6,6 +6,7 @@ import {
   SIGN_IN_ROUTE,
   SIGN_OUT_ROUTE,
   SIGN_UP_ROUTE,
+  VERIFICATION_ROUTE,
 } from "./Routes";
 
 import SignUpRoute from "../routes/SignUpRoute";
@@ -13,6 +14,7 @@ import SignInRoute from "../routes/SignInRoute";
 import SignOutRoute from "../routes/SignOutRoute";
 import PageNotFoundRoute from "../routes/PageNotFoundRoute";
 import LogoHalfWidthLayout from "../layouts/LogoHalfWidthLayout";
+import VerificationRoute from "../routes/VerificationRoute";
 
 const Router = () => {
   return (
@@ -22,6 +24,8 @@ const Router = () => {
         <Route path={SIGN_IN_ROUTE} element={<SignInRoute />} />
 
         <Route path={SIGN_UP_ROUTE} element={<SignUpRoute />} />
+
+        <Route path={VERIFICATION_ROUTE} element={<VerificationRoute />} />
 
         <Route
           path={SIGN_OUT_ROUTE}
