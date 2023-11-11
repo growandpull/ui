@@ -3,6 +3,7 @@ import StyledTextField from "../styled/StyledTextField";
 import { Link as RouterLink } from "react-router-dom";
 import { SIGN_IN_ROUTE } from "../../app/Routes";
 import { useForm } from "react-hook-form";
+import StyledForm from "../styled/StyledForm";
 
 const SignInForm = () => {
   const {
@@ -24,12 +25,7 @@ const SignInForm = () => {
   };
 
   return (
-    <Stack
-      gap={4}
-      onSubmit={handleSubmit(onSubmit)}
-      component="form"
-      width="480px"
-    >
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Typography variant="h3">Sign in.</Typography>
       <StyledTextField
         label="Email address"
@@ -102,7 +98,7 @@ const SignInForm = () => {
           </Link>
         </Typography>
       </Stack>
-    </Stack>
+    </StyledForm>
   );
 };
 
