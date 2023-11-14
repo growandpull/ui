@@ -47,7 +47,7 @@ const SignInForm = () => {
           }),
         }}
         helperText={errors?.email ? errors.email.message : " "}
-        err={!!errors?.email}
+        error={!!errors?.email}
       />
       <StyledTextField
         label="Password"
@@ -74,7 +74,7 @@ const SignInForm = () => {
           }),
         }}
         helperText={errors?.password ? errors.password.message : " "}
-        err={!!errors?.password}
+        error={!!errors?.password}
       />
       <Button variant="contained" type="submit">
         Create Account

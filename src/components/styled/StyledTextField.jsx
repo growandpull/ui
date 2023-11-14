@@ -7,6 +7,7 @@ const StyledTextField = ({
   placeholder,
   label,
   color,
+  error,
 }) => {
   return (
     <TextField
@@ -17,6 +18,7 @@ const StyledTextField = ({
       placeholder={placeholder}
       label={label}
       color={color}
+      error={error}
     />
   );
 };
