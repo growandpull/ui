@@ -1,7 +1,7 @@
 import { Button, Link, Stack, Typography } from "@mui/material";
 import StyledTextField from "../styled/StyledTextField";
 import { Link as RouterLink } from "react-router-dom";
-import { SIGN_IN_ROUTE } from "../../app/Routes";
+import { FORGOT_PASSWORD_ROUTE, SIGN_IN_ROUTE } from "../../app/Routes";
 import { useForm } from "react-hook-form";
 import StyledForm from "../styled/StyledForm";
 
@@ -76,20 +76,14 @@ const SignInForm = () => {
         helperText={errors?.password ? errors.password.message : " "}
         err={!!errors?.password}
       />
-
       <Button variant="contained" type="submit">
         Create Account
       </Button>
-
       <Stack flexDirection="row">
-        <Typography variant="p" sx={{ width: "fit-content" }}>
-          Can't sign in?{" "}
-          <Link to={SIGN_IN_ROUTE} component={RouterLink}>
-            Reset password{" "}
-          </Link>
-        </Typography>
+        <Link to={FORGOT_PASSWORD_ROUTE} component={RouterLink}>
+          Forgot password?{" "}
+        </Link>
       </Stack>
-
       <Stack flexDirection="row">
         <Typography>
           New to GROW&PULL?{" "}
