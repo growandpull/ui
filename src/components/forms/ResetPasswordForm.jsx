@@ -1,0 +1,83 @@
+import { Button, Typography } from "@mui/material";
+import StyledTextField from "../styled/StyledTextField";
+import { useForm } from "react-hook-form";
+import StyledForm from "../styled/StyledForm";
+
+const ResetPasswordForm = () => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    getValues,
+    formState: { errors },
+  } = useForm({ mode: "all" });
+
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+    } catch {
+      setError("newPassword", {
+        type: "invalidCredentials",
+        message: "Invalid credentials.",
+      });
+    }
+  };
+
+  const validatePasswordMatch = (value) => {
+    const newPassword = getValues("newPassword");
+    return newPassword === value || "Passwords do not match";
+  };
+
+  return (
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <Typography variant="h3">Create a new password.</Typography>
+      <StyledTextField
+        label="New password"
+        color="primary"
+        type="password"
+        register={{
+          ...register("newPassword", {
+            required: {
+              value: true,
+              message: "Field is required!",
+            },
+            minLength: {
+              value: 8,
+              message: "Min length is 8 symbols!",
+            },
+            maxLength: {
+              value: 32,
+              message: "Max length is 32 symbols!",
+            },
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z]).+$/,
+              message: "Enter a valid password!",
+            },
+          }),
+        }}
+        helperText={errors?.newPassword ? errors.newPassword.message : " "}
+        err={!!errors?.newPassword}
+      />
+      <StyledTextField
+        label="Confirm new password"
+        color="primary"
+        type="password"
+        register={{
+          ...register("confirmNewPassword", {
+            required: "Field is required!",
+            validate: validatePasswordMatch,
+          }),
+        }}
+        helperText={
+          errors?.confirmNewPassword ? errors.confirmNewPassword.message : " "
+        }
+        err={!!errors?.confirmNewPassword}
+      />
+      <Button variant="contained" type="submit">
+        Continue
+      </Button>
+    </StyledForm>
+  );
+};
+
+export default ResetPasswordForm;

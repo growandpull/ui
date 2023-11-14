@@ -8,24 +8,13 @@ export const theme = createTheme({
     mode: "dark",
     background: {
       default: "#000000",
-      paper: "#fff",
-    },
-    text: {
-      main: "#000000",
-      light: "#333333",
-      dark: "#000000",
-      contrastText: "#fff",
     },
     primary: {
       main: "#fff",
-      light: "#fff",
-      dark: "#fff",
       contrastText: "#000000",
     },
     secondary: {
       main: "#000000",
-      light: "#333333",
-      dark: "#000000",
       contrastText: "#fff",
     },
   },
@@ -36,16 +25,7 @@ export const theme = createTheme({
       fontFamily: "SansSerifBldFLF",
     },
   },
-  components: {
-    MuiLink: {
-      styleOverrides: {
-        root: ({ theme }) => ({
-          textDecoration: "underline",
-          color: theme.palette.text.contrastText,
-        }),
-      },
-    },
-  },
+  components: {},
   spacing: 4,
   shape: {
     borderRadius: 0,
