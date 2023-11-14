@@ -56,7 +56,7 @@ const ResetPasswordForm = () => {
           }),
         }}
         helperText={errors?.newPassword ? errors.newPassword.message : " "}
-        err={!!errors?.newPassword}
+        error={!!errors?.newPassword}
       />
       <StyledTextField
         label="Confirm new password"
@@ -71,7 +71,7 @@ const ResetPasswordForm = () => {
         helperText={
           errors?.confirmNewPassword ? errors.confirmNewPassword.message : " "
         }
-        err={!!errors?.confirmNewPassword}
+        error={!!errors?.confirmNewPassword}
       />
       <Button variant="contained" type="submit">
         Continue

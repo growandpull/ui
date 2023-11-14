@@ -48,7 +48,7 @@ const ForgotPasswordForm = () => {
           }),
         }}
         helperText={errors?.email ? errors.email.message : " "}
-        err={!!errors?.email}
+        error={!!errors?.email}
       />
       <Button variant="contained" type="submit">
         Send
