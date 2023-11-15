@@ -1,11 +1,11 @@
 import { Button, Link, Stack, Typography } from "@mui/material";
 import StyledTextField from "../styled/StyledTextField";
-import { Link as RouterLink } from "react-router-dom";
-import { FORGOT_PASSWORD_ROUTE, SIGN_UP_ROUTE } from "../../app/Routes";
 import { useForm } from "react-hook-form";
+import { Link as RouterLink } from "react-router-dom";
+import { SIGN_IN_ROUTE } from "../../app/Routes";
 import StyledForm from "../styled/StyledForm";
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const {
     register,
     handleSubmit,
@@ -15,7 +15,6 @@ const SignInForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
     } catch {
       setError("email", {
         type: "invalidCredentials",
@@ -25,7 +24,51 @@ const SignInForm = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)} title="Sign in.">
+    <StyledForm onSubmit={handleSubmit(onSubmit)} title="Create an Account.">
+      <StyledTextField
+        label="First name"
+        color="primary"
+        register={{
+          ...register("firstName", {
+            required: {
+              value: true,
+              message: "Field is required!",
+            },
+            minLength: {
+              value: 2,
+              message: "Min length is 2 symbols!",
+            },
+            maxLength: {
+              value: 100,
+              message: "Max length is 100 symbols!",
+            },
+          }),
+        }}
+        helperText={errors?.firstName ? errors.firstName.message : " "}
+        error={!!errors?.firstName}
+      />
+      <StyledTextField
+        label="Last name"
+        color="primary"
+        register={{
+          ...register("lastName", {
+            required: {
+              value: true,
+              message: "Field is required!",
+            },
+            minLength: {
+              value: 2,
+              message: "Min length is 2 symbols!",
+            },
+            maxLength: {
+              value: 100,
+              message: "Max length is 100 symbols!",
+            },
+          }),
+        }}
+        helperText={errors?.lastName ? errors.lastName.message : " "}
+        error={!!errors?.lastName}
+      />
       <StyledTextField
         label="Email address"
         color="primary"
@@ -51,7 +94,6 @@ const SignInForm = () => {
       <StyledTextField
         label="Password"
         color="primary"
-        type="password"
         register={{
           ...register("password", {
             required: {
@@ -75,21 +117,26 @@ const SignInForm = () => {
         helperText={errors?.password ? errors.password.message : " "}
         error={!!errors?.password}
       />
+
       <Button variant="contained" type="submit">
         Create Account
       </Button>
+
       <Stack flexDirection="row">
-        <Typography variant="p">
-          <Link to={FORGOT_PASSWORD_ROUTE} component={RouterLink}>
-            Forgot password?{" "}
+        <Typography variant="p" sx={{ width: "fit-content" }}>
+          By registering, you agree to the{" "}
+          <Link to={"#"} component={RouterLink}>
+            terms of use{" "}
           </Link>
+          and tariffs
         </Typography>
       </Stack>
+
       <Stack flexDirection="row">
         <Typography variant="p">
-          New to GROW&PULL?{" "}
-          <Link to={SIGN_UP_ROUTE} component={RouterLink}>
-            Sign Up
+          Already have an account?{" "}
+          <Link to={SIGN_IN_ROUTE} component={RouterLink}>
+            Sign in
           </Link>
         </Typography>
       </Stack>
@@ -97,4 +144,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
