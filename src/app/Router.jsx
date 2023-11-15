@@ -26,9 +26,10 @@ const Router = () => {
       <Route path={MAIN_ROUTE} element={<LogoHalfWidthLayout />}>
         <Route index element={<Navigate to={SIGN_IN_ROUTE} replace />} />
         <Route path={SIGN_IN_ROUTE} element={<SignInRoute />} />
+        <Route path={SIGN_UP_ROUTE} element={<SignUpRoute />} />
+
         <Route path={FORGOT_PASSWORD_ROUTE} element={<ForgotPasswordRoute />} />
         <Route path={RESET_PASSWORD_ROUTE} element={<ResetPasswordRoute />} />
-        <Route path={SIGN_UP_ROUTE} element={<SignUpRoute />} />
 
         <Route path={VERIFICATION_ROUTE} element={<VerificationRoute />} />
 

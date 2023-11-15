@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import StyledTextField from "../styled/StyledTextField";
 import { useForm } from "react-hook-form";
 import StyledForm from "../styled/StyledForm";
@@ -29,8 +29,10 @@ const ResetPasswordForm = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <Typography variant="h3">Create a new password.</Typography>
+    <StyledForm
+      onSubmit={handleSubmit(onSubmit)}
+      title="Create a new password."
+    >
       <StyledTextField
         label="New password"
         color="primary"

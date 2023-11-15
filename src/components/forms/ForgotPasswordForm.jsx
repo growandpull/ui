@@ -23,8 +23,7 @@ const ForgotPasswordForm = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <Typography variant="h3">Reset your password.</Typography>
+    <StyledForm onSubmit={handleSubmit(onSubmit)} title="Reset your password.">
       <Typography variant="p">
         Please enter your email so we can send you a password recovery email
       </Typography>
