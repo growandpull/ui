@@ -81,8 +81,10 @@ const SignInForm = () => {
               message: "Max length is 32 symbols!",
             },
             pattern: {
-              value: /^(?=.*[a-z])(?=.*[A-Z]).+$/,
-              message: "Enter a valid password!",
+              value:
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[a-zA-Z\d\W_]+$/,
+              message:
+                "Enter a valid password! Password should contain at least one capital letter, one small letter, one digit, and one special symbol",
             },
           }),
         }}
