@@ -11,3 +11,5 @@ export const VERIFICATION_ROUTE = "/verification";
 export const SIGN_OUT_ROUTE = "/sign-out";
 
 export const NOT_FOUND_ROUTE = "/404";
+
+export const STARTUPS_ROUTE = "/startups";

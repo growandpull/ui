@@ -1,9 +1,10 @@
 import { Button, Link, Stack, Typography } from "@mui/material";
 import StyledTextField from "../styled/StyledTextField";
 import { useForm } from "react-hook-form";
-import { Link as RouterLink } from "react-router-dom";
-import { SIGN_IN_ROUTE } from "../../app/Routes";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { SIGN_IN_ROUTE, STARTUPS_ROUTE } from "../../app/Routes";
 import StyledForm from "../styled/StyledForm";
+import useAuth from "../../auth/useAuth";
 
 const SignUpForm = () => {
   const {
@@ -13,10 +14,20 @@ const SignUpForm = () => {
     formState: { errors },
   } = useForm({ mode: "all" });
 
+  const navigate = useNavigate();
+
+  const { signUp } = useAuth();
+
   const onSubmit = async (data) => {
     try {
-    } catch {
+      await signUp(data);
+      navigate(STARTUPS_ROUTE);
+    } catch (err) {
       setError("email", {
+        type: "invalidCredentials",
+        message: "Invalid credentials.",
+      });
+      setError("password", {
         type: "invalidCredentials",
         message: "Invalid credentials.",
       });
@@ -94,6 +105,7 @@ const SignUpForm = () => {
       <StyledTextField
         label="Password"
         color="primary"
+        type="password"
         register={{
           ...register("password", {
             required: {

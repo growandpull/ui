@@ -1,7 +1,5 @@
-import React from "react";
-
 const SignOutRoute = () => {
-  return <div>SignOutRoute</div>;
+  return <h5>Signing out..</h5>;
 };
 
 export default SignOutRoute;
