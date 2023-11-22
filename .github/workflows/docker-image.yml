@@ -26,8 +26,8 @@ jobs:
           dockerfile: ui/ # Adjust to your Dockerfile path relative to the context
           push: true
           tags: |
-            Ksyushaaa/ui:latest
-            Ksyushaaa/ui:${{ github.sha }}
+            ksyushaaa/ui:latest
+            ksyushaaa/ui:${{ github.sha }}
 
       - name: SSH into Server and Update Docker Container
         uses: appleboy/ssh-action@master
@@ -38,5 +38,5 @@ jobs:
           script: |
             docker stop ui || true
             docker rm ui || true
-            docker pull Ksyushaaa/ui:latest
-            docker run -d --name ui Ksyushaaa/ui:latest
+            docker pull ksyushaaa/ui:latest
+            docker run -d --name ui ksyushaaa/ui:latest
