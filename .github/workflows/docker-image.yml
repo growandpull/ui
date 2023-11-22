@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ${{ github.workspace }}  # Updated to the correct context path
-          file: ui/Dockerfile  # Adjust to your Dockerfile path relative to the context
+          dockerfile: ui/ # Adjust to your Dockerfile path relative to the context
           push: true
           tags: |
             Ksyushaaa/ui:latest
