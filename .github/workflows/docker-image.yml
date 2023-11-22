@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .  # Updated to the correct context path
-          file: ui/Dockerfile  # Adjust to your Dockerfile path relative to the context
+          file: GrowAndPull/ui/Dockerfile  # Adjust to your Dockerfile path relative to the context
           push: true
           tags: |
             Ksyushaaa/ui:latest
