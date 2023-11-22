@@ -23,11 +23,11 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: GrowAndPull/ui/Dockerfile  # Adjust to your Dockerfile path
+          file: ui/Dockerfile  # Adjust to your Dockerfile path
           push: true
           tags: |
-            Ksyushaaa/GrowAndPull/ui:latest
-            Ksyushaaa/GrowAndPull/ui:${{ github.sha }}
+            Ksyushaaa/ui:latest
+            Ksyushaaa/ui:${{ github.sha }}
 
       - name: SSH into Server and Update Docker Container
         uses: appleboy/ssh-action@master
@@ -38,5 +38,5 @@ jobs:
           script: |
             docker stop ui || true
             docker rm ui || true
-            docker pull Ksyushaaa/GrowAndPull/ui:latest
-            docker run -d --name ui Ksyushaaa/GrowAndPull/ui:latest
+            docker pull Ksyushaaa/ui:latest
+            docker run -d --name ui Ksyushaaa/ui:latest
