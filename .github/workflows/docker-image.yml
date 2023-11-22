@@ -22,7 +22,7 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
-          context: GrowAndPull/  # Updated to the correct context path
+          context: /home/ubuntu/  # Updated to the correct context path
           file: ui/Dockerfile  # Adjust to your Dockerfile path relative to the context
           push: true
           tags: |
