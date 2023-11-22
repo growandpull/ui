@@ -22,8 +22,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: GrowAndPull/ui/Dockerfile  # Adjust to your Dockerfile path
+          context: ./ui
+          file: ./ui/Dockerfile  # Adjust to your Dockerfile path
           push: true
           tags: |
             Ksyushaaa/ui:latest
