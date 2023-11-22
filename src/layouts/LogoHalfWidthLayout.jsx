@@ -1,10 +1,13 @@
 import { Grid, Stack } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import BigLogoImage from "../assets/BigLogoImage.svg";
+import BigLogoImage from "../assets/logos/BigLogoImage.svg";
 
 const LogoHalfWidthLayout = () => {
   return (
-    <Grid container>
+    <Grid
+      container
+      sx={{ backgroundColor: (theme) => theme.palette.secondary.main }}
+    >
       <Grid item xs={5}>
         <img
           src={BigLogoImage}
