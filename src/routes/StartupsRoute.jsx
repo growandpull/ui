@@ -1,11 +1,5 @@
-import SignOutForm from "../components/forms/SignOutForm";
-
 const StartupsRoute = () => {
-  return (
-    <>
-      <SignOutForm />
-    </>
-  );
+  return <></>;
 };
 
 export default StartupsRoute;

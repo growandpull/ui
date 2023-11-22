@@ -15,8 +15,10 @@ export const theme = createTheme({
     },
     secondary: {
       main: "#000000",
+      light: "#0E0E0E",
       contrastText: "#fff",
     },
+    divider: "#fff",
   },
   typography: {
     fontFamily: "Rubik",
@@ -25,7 +27,22 @@ export const theme = createTheme({
       fontFamily: "SansSerifBldFLF",
     },
   },
-  components: {},
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          border: "0.5px solid",
+        },
+      },
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: "#0E0E0E",
+        },
+      },
+    },
+  },
   spacing: 4,
   shape: {
     borderRadius: 0,
