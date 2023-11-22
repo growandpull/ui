@@ -26,6 +26,9 @@ export const theme = createTheme({
     h3: {
       fontFamily: "SansSerifBldFLF",
     },
+    h6: {
+      fontSize: 18,
+    },
   },
   components: {
     MuiOutlinedInput: {
