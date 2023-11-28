@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import "@fontsource/rubik";
+import "@fontsource/heebo";
 import "../assets/fonts/SansSerifBldFLF.otf";
 
 export const theme = createTheme({
@@ -23,11 +24,35 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Rubik",
     htmlFontSize: 16,
+    h1: {
+      fontFamily: "SansSerifBldFLF",
+    },
+    h2: {
+      fontFamily: "SansSerifBldFLF",
+    },
     h3: {
       fontFamily: "SansSerifBldFLF",
     },
+    h4: {
+      fontFamily: "SansSerifBldFLF",
+    },
+    h5: {
+      fontFamily: "SansSerifBldFLF",
+    },
     h6: {
-      fontSize: 18,
+      fontFamily: "SansSerifBldFLF",
+    },
+    body1: {
+      fontSize: "1rem",
+    },
+    body2: {
+      fontSize: "0.75rem",
+    },
+    overline: {
+      fontSize: "2rem",
+      fontFamily: "Heebo",
+      fontWeight: "bold",
+      lineHeight: "normal",
     },
   },
   components: {

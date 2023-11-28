@@ -16,8 +16,7 @@ const Footer = () => {
       sx={{
         py: "48px",
         backgroundColor: (theme) => theme.palette.secondary.main,
-        position: "fixed",
-        bottom: 0,
+        marginTop: "auto",
       }}
     >
       <Stack
@@ -27,7 +26,7 @@ const Footer = () => {
         textAlign="center"
         gap={4}
       >
-        <Typography variant="h6" textTransform="uppercase">
+        <Typography variant="body1" textTransform="uppercase">
           please feel free to send us an e-mail at{" "}
           <Typography component="span" fontWeight="bolder">
             grow.and.pull@gmail.com For

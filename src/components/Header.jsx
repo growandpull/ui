@@ -41,7 +41,7 @@ function Header() {
       <Toolbar
         component="nav"
         disableGutters
-        sx={{ px: "100px", py: "18px", justifyContent: "space-between" }}
+        sx={{ py: "18px", justifyContent: "space-between" }}
       >
         <Stack flexDirection="row" alignItems="center" gap={10}>
           <IconButton disableRipple>
