@@ -5,6 +5,16 @@ import "@fontsource/heebo";
 import "../assets/fonts/SansSerifBldFLF.otf";
 
 export const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      xxl: 2500,
+    },
+  },
   palette: {
     mode: "dark",
     background: {
@@ -25,10 +35,13 @@ export const theme = createTheme({
     fontFamily: "Rubik",
     htmlFontSize: 16,
     h1: {
-      fontFamily: "SansSerifBldFLF",
+      fontFamily: "Heebo",
+      fontSize: "8.75rem",
+      fontWeight: "bold",
     },
     h2: {
       fontFamily: "SansSerifBldFLF",
+      fontSize: "4.75rem",
     },
     h3: {
       fontFamily: "SansSerifBldFLF",
@@ -47,6 +60,7 @@ export const theme = createTheme({
     },
     body2: {
       fontSize: "0.75rem",
+      lineHeight: "2",
     },
     overline: {
       fontSize: "2rem",
