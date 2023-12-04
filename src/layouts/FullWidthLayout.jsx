@@ -1,34 +1,37 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import useAuth from "../auth/useAuth";
+import UnauthorizedHeader from "../components/UnauthorizedHeder";
 
 const FullWidthLayout = () => {
+  const { authorized } = useAuth();
+
   return (
-    <Container
-      disableGutters
-      maxWidth="xxl"
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
       }}
     >
-      <Container
-        component="main"
-        disableGutters
-        maxWidth="xl"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <Header />
-        <Outlet />
-      </Container>
-      <Footer />
-    </Container>
+      <>
+        <Container maxWidth="xl" disableGutters>
+          {!authorized() ? <UnauthorizedHeader /> : <Header />}
+        </Container>
+        <Container component="main" maxWidth="xxl" disableGutters>
+          <Outlet />
+        </Container>
+        <Box
+          sx={{ backgroundColor: (theme) => theme.palette.background.default }}
+        >
+          <Container maxWidth="xl" disableGutters>
+            <Footer />
+          </Container>
+        </Box>
+      </>
+    </Box>
   );
 };
 

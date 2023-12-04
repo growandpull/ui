@@ -10,8 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import HeartIcon from "../icons/HeartIcon";
-import { Link as RouterLink } from "react-router-dom";
-import TopRighArrowIcon from "../icons/TopRighArrowIcon";
+import StyledFollowLink from "./StyledFollowLink";
+import GetCurrencySymbolUtil from "../utils/GetCurrencySymbolUtil";
 
 const Startup = ({ imageSrc, title, currency, price, description }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -20,20 +20,7 @@ const Startup = ({ imageSrc, title, currency, price, description }) => {
     setShowFullDescription(!showFullDescription);
   };
 
-  const getCurrencySymbol = () => {
-    switch (currency) {
-      case "USD":
-        return "$";
-      case "UAH":
-        return "₴";
-      case "EUR":
-        return "€";
-      default:
-        return "";
-    }
-  };
-
-  const currencySymbol = getCurrencySymbol();
+  const currencySymbol = GetCurrencySymbolUtil(currency);
   const hasImageData = Boolean(
     imageSrc && imageSrc.length > "data:image/jpeg;base64,null".length
   );
@@ -96,26 +83,7 @@ const Startup = ({ imageSrc, title, currency, price, description }) => {
             <IconButton disableRipple>
               <HeartIcon />
             </IconButton>
-            <Typography
-              variant="caption"
-              fontWeight="bold"
-              textTransform="uppercase"
-              display="flex"
-              alignItems="center"
-              sx={{ border: 1 }}
-            >
-              <Link
-                to={"#"}
-                component={RouterLink}
-                underline="none"
-                sx={{ borderRight: 1, whiteSpace: "nowrap" }}
-                px={4}
-                py={2}
-              >
-                More information
-              </Link>
-              <TopRighArrowIcon style={{ margin: "0 16px" }} />
-            </Typography>
+            <StyledFollowLink text="More information" to={"#"} />
           </CardActions>
         </Grid>
       </Grid>

@@ -1,5 +1,7 @@
 export const MAIN_ROUTE = "/";
 
+export const ABOUT_ROUTE = "/about";
+
 export const SIGN_UP_ROUTE = "/sign-up";
 export const SIGN_IN_ROUTE = "/sign-in";
 

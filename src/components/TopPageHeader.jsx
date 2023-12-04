@@ -4,7 +4,7 @@ import { Stack, Typography } from "@mui/material";
 
 const TopPageHeader = () => {
   return (
-    <Stack gap={11}>
+    <Stack gap={11} maxWidth="xl" width={1}>
       <Stack flexDirection="row" gap={6} alignItems="flex-end">
         <img src={BigArrowDown} alt="BigArrowDown" style={{ width: "150px" }} />
         <Typography variant="overline" maxWidth="380px">

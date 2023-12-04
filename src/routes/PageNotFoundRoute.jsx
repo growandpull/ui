@@ -12,7 +12,7 @@ const PageNotFoundRoute = () => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" mt="20%">
-      <Typography variant="h2">Page not found</Typography>
+      <Typography variant="h3">Page not found</Typography>
       <Button variant="contained" size="large" onClick={handleBackClick}>
         Go back
       </Button>
