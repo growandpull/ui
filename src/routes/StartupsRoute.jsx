@@ -6,7 +6,7 @@ import StyledTextGroup from "../components/styled/StyledTextGroup";
 
 const StartupsRoute = () => {
   return (
-    <Stack>
+    <Stack maxWidth="xl" width={1}>
       <Stack gap={35} marginBlockEnd={50} marginBlockStart={60}>
         <TopPageHeader />
         <StyledTextGroup
