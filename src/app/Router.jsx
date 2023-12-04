@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import {
+  ABOUT_ROUTE,
   FORGOT_PASSWORD_ROUTE,
   MAIN_ROUTE,
   NOT_FOUND_ROUTE,
@@ -24,6 +25,7 @@ import FullWidthLayout from "../layouts/FullWidthLayout";
 import RequireAuth from "../auth/RequireAuth";
 import StartupsRoute from "../routes/StartupsRoute";
 import useAuth from "../auth/useAuth";
+import AboutRoute from "../routes/AboutRoute";
 
 const Router = () => {
   const { authorized } = useAuth();
@@ -31,25 +33,34 @@ const Router = () => {
   return (
     <Routes>
       {!authorized() ? (
-        <Route path={MAIN_ROUTE} element={<LogoHalfWidthLayout />}>
-          <Route index element={<Navigate to={SIGN_IN_ROUTE} replace />} />
-          <Route path={SIGN_IN_ROUTE} element={<SignInRoute />} />
-          <Route path={SIGN_UP_ROUTE} element={<SignUpRoute />} />
+        <Route>
+          <Route path={MAIN_ROUTE} element={<FullWidthLayout />}>
+            <Route index element={<Navigate to={ABOUT_ROUTE} replace />} />
+            <Route path={ABOUT_ROUTE} element={<AboutRoute />} />
+          </Route>
+          <Route path={MAIN_ROUTE} element={<LogoHalfWidthLayout />}>
+            <Route index element={<Navigate to={SIGN_IN_ROUTE} replace />} />
+            <Route path={SIGN_IN_ROUTE} element={<SignInRoute />} />
+            <Route path={SIGN_UP_ROUTE} element={<SignUpRoute />} />
 
-          <Route
-            path={FORGOT_PASSWORD_ROUTE}
-            element={<ForgotPasswordRoute />}
-          />
-          <Route path={RESET_PASSWORD_ROUTE} element={<ResetPasswordRoute />} />
+            <Route
+              path={FORGOT_PASSWORD_ROUTE}
+              element={<ForgotPasswordRoute />}
+            />
+            <Route
+              path={RESET_PASSWORD_ROUTE}
+              element={<ResetPasswordRoute />}
+            />
 
-          <Route path={VERIFICATION_ROUTE} element={<VerificationRoute />} />
+            <Route path={VERIFICATION_ROUTE} element={<VerificationRoute />} />
 
-          <Route
-            path={SIGN_OUT_ROUTE}
-            element={<Navigate to={SIGN_IN_ROUTE} replace />}
-          />
+            <Route
+              path={SIGN_OUT_ROUTE}
+              element={<Navigate to={SIGN_IN_ROUTE} replace />}
+            />
 
-          <Route path="*" element={<Navigate to={SIGN_IN_ROUTE} replace />} />
+            <Route path="*" element={<Navigate to={SIGN_IN_ROUTE} replace />} />
+          </Route>
         </Route>
       ) : (
         <Route element={<RequireAuth authRoute={SIGN_IN_ROUTE} />}>
