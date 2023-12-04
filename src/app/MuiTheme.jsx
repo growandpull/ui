@@ -2,7 +2,6 @@ import * as React from "react";
 import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import "@fontsource/rubik";
 import "@fontsource/heebo";
-import "../assets/fonts/SansSerifBldFLF.otf";
 
 export const theme = createTheme({
   breakpoints: {
