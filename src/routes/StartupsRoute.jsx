@@ -13,6 +13,8 @@ const StartupsRoute = () => {
           imgTextSrc={Startups}
           variant="h2"
           text="Innovate. Invest. Inspire."
+          imgMargin="-42px"
+          alignItems="center"
         />
       </Stack>
       <StartupsList />
