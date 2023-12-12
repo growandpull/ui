@@ -3,7 +3,7 @@ name: Docker Build and Deploy
 on:
   push:
     branches:
-      - main  # Adjust to your main branch name
+      - main  # Змініть на основну гілку свого репозиторію
 
 jobs:
   build-and-deploy:
@@ -22,8 +22,8 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
-          context: ${{ github.workspace }}  # Updated to the correct context path
-          dockerfile: ui/Dockerfile  # Adjust to your Dockerfile path relative to the context
+          context: ${{ github.workspace }}  # Шлях до вашого контексту (зазвичай коренева тека репозиторію)
+          dockerfile: ui/Dockerfile  # Шлях до вашого Dockerfile, якщо він розташований не в корені репозиторію
           push: true
           tags: |
             growandpull/ui:latest
